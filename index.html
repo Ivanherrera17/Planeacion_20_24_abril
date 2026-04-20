@@ -1,0 +1,324 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--color-text-primary);font-size:13px;line-height:1.5}
+.wrap{padding:1.5rem 0}
+.header{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-bottom:1.5rem}
+.header h1{font-size:18px;font-weight:500;margin-bottom:.5rem;color:var(--color-text-primary)}
+.header h2{font-size:14px;font-weight:400;color:var(--color-text-secondary);margin-bottom:.75rem}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:.75rem}
+.badge{display:inline-block;padding:3px 10px;border-radius:var(--border-radius-md);font-size:11px;font-weight:500}
+.b-purple{background:#EEEDFE;color:#3C3489}
+.b-teal{background:#E1F5EE;color:#0F6E56}
+.b-amber{background:#FAEEDA;color:#633806}
+.b-coral{background:#FAECE7;color:#712B13}
+.b-blue{background:#E6F1FB;color:#0C447C}
+.sec-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:.75rem;padding-left:4px;border-left:3px solid #534AB7}
+.day-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:1.25rem;background:var(--color-background-primary)}
+.day-header{padding:.7rem 1rem;display:flex;align-items:center;gap:10px}
+.day-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0}
+.day-info h3{font-size:13px;font-weight:500}
+.day-info p{font-size:11px;color:var(--color-text-secondary)}
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:0.5px solid var(--color-border-tertiary)}
+.phase{padding:.75rem 1rem;border-right:0.5px solid var(--color-border-tertiary)}
+.phase:last-child{border-right:none}
+.phase-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem;padding:2px 8px;border-radius:12px;display:inline-block}
+.pl-inicio{background:#E1F5EE;color:#0F6E56}
+.pl-desarrollo{background:#EEEDFE;color:#3C3489}
+.pl-cierre{background:#FAEEDA;color:#633806}
+.phase p{font-size:12px;color:var(--color-text-secondary);line-height:1.5}
+.bottom-row{display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid var(--color-border-tertiary)}
+.res-box,.tarea-box{padding:.7rem 1rem}
+.res-box{border-right:0.5px solid var(--color-border-tertiary)}
+.mini-label{font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.res-box p,.tarea-box p{font-size:12px;color:var(--color-text-primary);line-height:1.5}
+.rubric-wrap{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin-top:1.5rem}
+.rubric-header{background:#EEEDFE;padding:.75rem 1.25rem;border-bottom:0.5px solid var(--color-border-tertiary)}
+.rubric-header h3{font-size:14px;font-weight:500;color:#3C3489}
+.rubric-header p{font-size:11px;color:#534AB7;margin-top:2px}
+table.rubric{width:100%;border-collapse:collapse;font-size:12px}
+table.rubric th{padding:.6rem .75rem;font-weight:500;font-size:11px;text-align:left;background:var(--color-background-secondary);border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary)}
+table.rubric td{padding:.6rem .75rem;border-bottom:0.5px solid var(--color-border-tertiary);vertical-align:top;line-height:1.5;color:var(--color-text-primary)}
+table.rubric tr:last-child td{border-bottom:none}
+.nivel-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;flex-shrink:0}
+.n1{background:#E24B4A}
+.n2{background:#EF9F27}
+.n3{background:#1D9E75}
+.nivel-tag{display:inline-flex;align-items:center;font-size:11px;font-weight:500;padding:2px 8px;border-radius:12px;white-space:nowrap}
+.t-inicial{background:#FCEBEB;color:#791F1F}
+.t-proceso{background:#FAEEDA;color:#633806}
+.t-logrado{background:#E1F5EE;color:#0F6E56}
+.pda-label{font-size:10px;font-weight:500;color:var(--color-text-secondary);background:var(--color-background-secondary);padding:2px 7px;border-radius:10px;display:inline-block;margin-bottom:4px}
+.nota-formativa{background:#E6F1FB;border:0.5px solid #B5D4F4;border-radius:var(--border-radius-md);padding:.75rem 1rem;margin-top:1rem;font-size:12px;color:#0C447C;line-height:1.6}
+.nota-formativa strong{font-weight:500}
+.cf-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:.5rem}
+</style>
+<div class="wrap">
+
+<div class="header">
+  <h1>Planeación didáctica semanal — Fase 3 · 1.º de Primaria</h1>
+  <h2>Proyecto central: "Mi nombre y mi historia en la comunidad"</h2>
+  <div class="meta">
+    <span class="badge b-purple">20–24 de abril de 2026</span>
+    <span class="badge b-teal">Nueva Escuela Mexicana</span>
+    <span class="badge b-amber">Evaluación formativa</span>
+  </div>
+  <div style="margin-top:.9rem">
+    <div class="mini-label">Campos formativos</div>
+    <div class="cf-row">
+      <span class="badge b-purple">Lenguajes</span>
+      <span class="badge b-blue">Saberes y Pensamiento Científico</span>
+      <span class="badge b-coral">De lo Humano y lo Comunitario</span>
+    </div>
+  </div>
+</div>
+
+<div class="sec-title">Cronograma semanal de aula</div>
+
+<!-- LUNES -->
+<div class="day-card">
+  <div class="day-header" style="background:#EEEDFE22">
+    <div class="day-dot b-purple">Lu</div>
+    <div class="day-info">
+      <h3>Lunes 20 de abril — Proyecto "Nombrario"</h3>
+      <p>Campo: Lenguajes · De lo Humano y lo Comunitario &nbsp;·&nbsp; Recurso: Proyectos de Aula, p. 20</p>
+    </div>
+  </div>
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-label pl-inicio">Inicio</div>
+      <p>Asamblea grupal: cada alumno dice su nombre en voz alta. Se pregunta: ¿Sabes qué significa tu nombre? ¿Quién te lo puso? Se activan saberes previos con preguntas detonadoras.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label pl-desarrollo">Desarrollo</div>
+      <p>Se abre el "Nombrario del grupo". Cada estudiante escribe o dicta su nombre en una tarjeta ilustrada. Se comparten historias breves. Se inicia un mural colaborativo con las tarjetas.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label pl-cierre">Cierre</div>
+      <p>Reflexión guiada: ¿Qué aprendiste sobre los nombres del grupo? La docente registra participación y expresión oral en el diario de observación.</p>
+    </div>
+  </div>
+  <div class="bottom-row">
+    <div class="res-box">
+      <div class="mini-label">Recursos</div>
+      <p>Proyectos de Aula p. 20 · Tarjetas de cartulina · Colores · Mural de papel kraft</p>
+    </div>
+    <div class="tarea-box">
+      <div class="mini-label">Tarea a casa</div>
+      <p>Con ayuda de la familia, investigar el origen y significado del nombre propio. <em>Nuestros Saberes</em>, p. 135.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MARTES -->
+<div class="day-card">
+  <div class="day-header" style="background:#E1F5EE22">
+    <div class="day-dot b-teal">Ma</div>
+    <div class="day-info">
+      <h3>Martes 21 de abril — Clasificación de nombres</h3>
+      <p>Campo: Lenguajes &nbsp;·&nbsp; Recurso: Trazos y Palabras, p. 9</p>
+    </div>
+  </div>
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-label pl-inicio">Inicio</div>
+      <p>Socialización de la tarea: ¿Qué descubrieron con su familia? Se escuchan tres o cuatro testimonios voluntarios. Se listan los nombres en el pizarrón.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label pl-desarrollo">Desarrollo</div>
+      <p>Actividad de clasificación: los alumnos separan los nombres en "cortos" y "largos" según el número de letras. Practican trazos en espiral y líneas curvas vinculados a las letras de sus nombres (p. 10, 28). Trabajo por parejas con fichas manipulables.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label pl-cierre">Cierre</div>
+      <p>Presentación en plenaria de la clasificación. Se reflexiona: ¿Todos los nombres cortos suenan igual? ¿Qué letras se repiten más? Retroalimentación oral inmediata.</p>
+    </div>
+  </div>
+  <div class="bottom-row">
+    <div class="res-box">
+      <div class="mini-label">Recursos</div>
+      <p>Trazos y Palabras pp. 9, 10, 28 · Fichas con nombres · Pizarrón · Hojas de trazo</p>
+    </div>
+    <div class="tarea-box">
+      <div class="mini-label">Tarea a casa</div>
+      <p>Preguntar a un adulto una palabra en lengua originaria que se use en la comunidad o familia y anotar su significado. <em>Proyectos Comunitarios</em>, p. 59.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MIÉRCOLES -->
+<div class="day-card">
+  <div class="day-header" style="background:#E6F1FB22">
+    <div class="day-dot b-blue">Mi</div>
+    <div class="day-info">
+      <h3>Miércoles 22 de abril — Sucesiones de 2 en 2</h3>
+      <p>Campo: Saberes y Pensamiento Científico &nbsp;·&nbsp; Recurso: Trazos y Números, p. 62</p>
+    </div>
+  </div>
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-label pl-inicio">Inicio</div>
+      <p>Juego de conteo corporal: dar palmadas de dos en dos mientras se cuenta en voz alta. Se introduce la pregunta: ¿Cómo saltaría un conejo si solo brinca de dos en dos?</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label pl-desarrollo">Desarrollo</div>
+      <p>Trabajo en el libro: sucesión 2–4–6–8–10–12 con apoyo de ilustraciones de animales. Los alumnos completan secuencias con objetos concretos (piedritas, semillas). Se vincula con conteo de colecciones hasta el 10 (pp. 12–15).</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label pl-cierre">Cierre</div>
+      <p>Corrección dialogada: cada alumno verifica su trabajo con un compañero. La docente registra en lista de cotejo quiénes identificaron el patrón y quiénes requieren refuerzo.</p>
+    </div>
+  </div>
+  <div class="bottom-row">
+    <div class="res-box">
+      <div class="mini-label">Recursos</div>
+      <p>Trazos y Números pp. 12–15, 62 · Material concreto (semillas, piedritas) · Lista de cotejo docente</p>
+    </div>
+    <div class="tarea-box">
+      <div class="mini-label">Tarea a casa</div>
+      <p>Dibujar la secuencia de pasos de higiene personal (lavado de manos y dientes) con sus momentos: antes, durante y después. <em>Nuestros Saberes</em>, p. 80.</p>
+    </div>
+  </div>
+</div>
+
+<!-- JUEVES -->
+<div class="day-card">
+  <div class="day-header" style="background:#FAECE722">
+    <div class="day-dot b-coral">Ju</div>
+    <div class="day-info">
+      <h3>Jueves 23 de abril — Diálogo cultural y diversidad</h3>
+      <p>Campo: De lo Humano y lo Comunitario · Lenguajes &nbsp;·&nbsp; Recurso: Proyectos de Aula, p. 166</p>
+    </div>
+  </div>
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-label pl-inicio">Inicio</div>
+      <p>Compartir las palabras en lenguas originarias traídas de casa. Se escriben en el pizarrón con su significado. ¿Cuántas lenguas distintas encontramos? Se valora la diversidad lingüística.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label pl-desarrollo">Desarrollo</div>
+      <p>Lectura comentada sobre diversidad cultural (p. 166). Se analizan imágenes de familias de distintas regiones de México. Los alumnos identifican semejanzas y diferencias con su propia historia familiar. Diálogo respetuoso en círculo.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label pl-cierre">Cierre</div>
+      <p>Acuerdo grupal: ¿Qué hace especial a cada familia? Se construye una frase colectiva que se incorpora al mural del Nombrario.</p>
+    </div>
+  </div>
+  <div class="bottom-row">
+    <div class="res-box">
+      <div class="mini-label">Recursos</div>
+      <p>Proyectos de Aula p. 166 · Pizarrón · Imágenes de familias mexicanas · Marcadores de colores</p>
+    </div>
+    <div class="tarea-box">
+      <div class="mini-label">Tarea a casa</div>
+      <p>Con apoyo familiar, iniciar el árbol genealógico: nombres de abuelos, padres, hermanos. <em>Nuestros Saberes</em>, p. 161.</p>
+    </div>
+  </div>
+</div>
+
+<!-- VIERNES -->
+<div class="day-card">
+  <div class="day-header" style="background:#E1F5EE22">
+    <div class="day-dot b-teal">Vi</div>
+    <div class="day-info">
+      <h3>Viernes 24 de abril — Exposición del collage personal</h3>
+      <p>Campo: Lenguajes · De lo Humano y lo Comunitario &nbsp;·&nbsp; Recurso: Proyectos de Aula, p. 82</p>
+    </div>
+  </div>
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-label pl-inicio">Inicio</div>
+      <p>Tiempo de preparación: los alumnos revisan y dan los últimos toques a su collage "¿Quién soy yo?". Se recuerda el propósito comunicativo: presentarse a la comunidad escolar.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label pl-desarrollo">Desarrollo</div>
+      <p>Exposición oral en pequeños grupos (máximo 5). Cada alumno presenta su collage: nombre, significado, familia, elemento favorito de su comunidad. Los oyentes hacen una pregunta positiva al expositor. Se usa la rúbrica de autoevaluación.</p>
+    </div>
+    <div class="phase">
+      <div class="phase-label pl-cierre">Cierre</div>
+      <p>Metacognición guiada: ¿Qué aprendí de mí esta semana? ¿Qué aprendí de mis compañeros? Registro en el portafolio del alumno. La docente comparte retroalimentación personalizada oral.</p>
+    </div>
+  </div>
+  <div class="bottom-row">
+    <div class="res-box">
+      <div class="mini-label">Recursos</div>
+      <p>Proyectos de Aula p. 82 · Collages elaborados · Rúbrica de autoevaluación · Portafolio del alumno</p>
+    </div>
+    <div class="tarea-box">
+      <div class="mini-label">Tarea a casa</div>
+      <p>Compartir el collage y el árbol genealógico con la familia. Comentar qué aprendieron juntos durante la semana.</p>
+    </div>
+  </div>
+</div>
+
+<!-- RÚBRICA -->
+<div style="margin-top:1.75rem">
+<div class="sec-title">Rúbrica de evaluación formativa — Tres niveles de logro</div>
+
+<div class="rubric-wrap">
+  <div class="rubric-header">
+    <h3>Rúbrica formativa · "Mi nombre y mi historia en la comunidad"</h3>
+    <p>Instrumento orientado al diálogo docente–alumno y la autorreflexión · Fase 3 · 1.º Primaria · NEM 2022</p>
+  </div>
+  <table class="rubric">
+    <thead>
+      <tr>
+        <th style="width:18%">Proceso de Desarrollo de Aprendizaje (PDA)</th>
+        <th style="width:11%">Campo formativo</th>
+        <th style="width:24%"><span class="nivel-tag t-inicial"><span class="nivel-dot n1"></span>Inicial</span></th>
+        <th style="width:24%"><span class="nivel-tag t-proceso"><span class="nivel-dot n2"></span>En proceso</span></th>
+        <th style="width:23%"><span class="nivel-tag t-logrado"><span class="nivel-dot n3"></span>Logrado</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="pda-label">Identidad y pertenencia</div><br>Reconoce el origen y significado de su nombre como parte de su identidad personal y cultural.</td>
+        <td><span class="badge b-coral" style="font-size:10px">Humano y Comunitario</span></td>
+        <td>No logra expresar el significado de su nombre. Requiere apoyo constante para participar en el diálogo grupal.</td>
+        <td>Conoce el significado de su nombre con apoyo. Participa con ayuda del docente o de un par.</td>
+        <td>Explica con sus palabras el origen de su nombre, lo relaciona con su familia y lo comparte con seguridad ante el grupo.</td>
+      </tr>
+      <tr>
+        <td><div class="pda-label">Lectoescritura inicial</div><br>Identifica y clasifica nombres propios distinguiendo su extensión (corto/largo) y las letras que los forman.</td>
+        <td><span class="badge b-purple" style="font-size:10px">Lenguajes</span></td>
+        <td>No distingue entre nombres cortos y largos. Tiene dificultad para identificar las letras de su nombre.</td>
+        <td>Clasifica algunos nombres con orientación. Reconoce las letras de su propio nombre pero confunde las de otros.</td>
+        <td>Clasifica autónomamente nombres por extensión, identifica letras iniciales y realiza trazos con control motriz adecuado.</td>
+      </tr>
+      <tr>
+        <td><div class="pda-label">Pensamiento matemático</div><br>Completa sucesiones numéricas de 2 en 2 e identifica el patrón de conteo mediante material concreto y representaciones gráficas.</td>
+        <td><span class="badge b-blue" style="font-size:10px">Saberes Científicos</span></td>
+        <td>No identifica el patrón de la sucesión. Cuenta de uno en uno sin reconocer el salto de dos.</td>
+        <td>Completa la sucesión con apoyo de material concreto o de un par. Identifica el patrón en situaciones guiadas.</td>
+        <td>Completa sucesiones de 2 en 2 de manera autónoma, explica el patrón y lo aplica en nuevas situaciones propuestas.</td>
+      </tr>
+      <tr>
+        <td><div class="pda-label">Diversidad y comunidad</div><br>Reconoce y valora palabras en lenguas originarias de su comunidad como expresión de la riqueza cultural del entorno.</td>
+        <td><span class="badge b-coral" style="font-size:10px">Humano y Comunitario</span></td>
+        <td>No identifica palabras en lengua originaria ni muestra interés por explorarlas en su entorno familiar.</td>
+        <td>Trae una palabra en lengua originaria pero desconoce su significado o tiene dificultad para compartirla.</td>
+        <td>Comparte una o más palabras en lengua originaria con su significado y establece conexión con su comunidad o familia.</td>
+      </tr>
+      <tr>
+        <td><div class="pda-label">Participación y expresión oral</div><br>Se expresa oralmente ante el grupo al presentar su collage, comunica ideas sobre sí mismo y escucha respetuosamente a sus pares.</td>
+        <td><span class="badge b-purple" style="font-size:10px">Lenguajes</span></td>
+        <td>Evita participar o lo hace con monosílabos. Muestra inhibición notoria al exponer frente al grupo.</td>
+        <td>Participa brevemente con apoyo del docente. Su expresión es comprensible pero limitada en detalles o seguridad.</td>
+        <td>Se expresa con confianza y claridad, incluye detalles sobre su nombre, familia y comunidad, y formula preguntas a sus pares.</td>
+      </tr>
+      <tr>
+        <td><div class="pda-label">Autorreflexión y metacognición</div><br>Reflexiona sobre lo aprendido durante la semana, identifica sus avances y expresa qué le resultó difícil.</td>
+        <td><span class="badge b-teal" style="font-size:10px">Transversal</span></td>
+        <td>No logra identificar qué aprendió. Responde "no sé" o no participa en el cierre reflexivo.</td>
+        <td>Identifica un aprendizaje de la semana con orientación. Su reflexión es breve o requiere preguntas detonadoras del docente.</td>
+        <td>Expresa con sus palabras qué aprendió, qué fue difícil y cómo lo superó. Valora el aprendizaje colectivo del grupo.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="nota-formativa">
+  <strong>Nota pedagógica para el docente:</strong> Esta rúbrica no genera calificación numérica. Su función es orientar el diálogo entre docente y alumno, y promover la autoevaluación. Se recomienda compartir los criterios con los estudiantes <em>antes</em> de las actividades, retomar la rúbrica en el cierre del viernes como instrumento de reflexión colectiva, y utilizarla como insumo para el registro de trayectoria en el portafolio individual. Los tres niveles representan un continuo de aprendizaje, no una jerarquía de valor personal.
+</div>
+</div>
+
+</div>
